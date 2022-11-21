@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function isPalindrome(str) {
+    let arr = str.split('');
+    let firstCharacter = arr[0];
+    let lastCharacter = arr[arr.length - 1];
+    if(firstCharacter === lastCharacter) {
+      arr.shift();
+      arr.pop();
+      if(isEnd(arr)) {
+        return true;
+      } else {
+        let newStr = arr.join('');
+        return isPalindrome(newStr);
+      }
+    }
+    return false;
+  }
+  function isEnd(arr) {
+    return arr.length === 0 || arr.length === 1;
+  }
+  let chuoi = 'Aa11aA';
+  console.log(isPalindrome(chuoi));
+</script>
+
+</body>
+</html>
